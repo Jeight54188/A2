@@ -3,7 +3,7 @@
 
 Open this page at https://jeight54188.github.io/a2/
 
-## 用作扩展
+## As an Extension
 
 This repository can be added as an **extension** in MakeCode.。
 
