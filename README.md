@@ -1,7 +1,14 @@
  
 
 
-Open this page at https://jeight54188.github.io/a2/
+## Project Name
+
+BOC (Believe or change)
+
+## Project Description
+
+BOC (Believe or change) is an arcade game for two people to play on Makecode. The main content of the game is to pick up props and defeat the opponent to win.The story is set in a medieval adventure world, where the hero fights against the evil hero born from his own negative emotions to protect the princess and save the kingdom.
+
 
 ## As an Extension
 
