@@ -373,8 +373,8 @@ info.player2.onLifeZero(function () {
 })
 // Basic game settings, such as creating elves, maps and other basic elements
 let Yami_Food: Sprite = null
-let player_2_attack_way = 0
-let player_1_attack_way = 0
+let Player_2_Attack = 0
+let Player_1_Attack = 0
 let projectile: Sprite = null
 let Dark_Pro: Sprite = null
 let mySprite2: Sprite = null
@@ -591,7 +591,7 @@ game.onUpdate(function () {
             . . . . f f f f f f . . . . . . 
             . . . . . . f f f . . . . . . . 
             `)
-        player_1_attack_way = -1
+        Player_1_Attack = -1
     }
     if (controller.right.isPressed()) {
         mysp.setImage(img`
@@ -612,7 +612,7 @@ game.onUpdate(function () {
             . . . . . . f f f f f f . . . . 
             . . . . . . . f f f . . . . . . 
             `)
-        player_1_attack_way = 1
+        Player_1_Attack = 1
     }
 })
 // Updated sprite movement graphics to ensure smoother gameplay for players.
@@ -636,7 +636,7 @@ game.onUpdate(function () {
             . . . . . . f f f f f f . . . . 
             . . . . . . . f f f . . . . . . 
             `)
-        player_2_attack_way = 1
+        Player_2_Attack = 1
     }
     if (controller.player2.isPressed(ControllerButton.Left)) {
         mySprite2.setImage(img`
@@ -657,7 +657,7 @@ game.onUpdate(function () {
             . . . . f f f f f f . . . . . . 
             . . . . . . f f f . . . . . . . 
             `)
-        player_2_attack_way = -1
+        Player_2_Attack = -1
     }
 })
 // Setting high reward food, namely the princess, can increase the player's health and score to make the game more exciting.
