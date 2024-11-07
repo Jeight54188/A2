@@ -1,24 +1,24 @@
  
 
 
-> 在 [https://jeight54188.github.io/a2/](https://jeight54188.github.io/a2/) 打开此页面
+Open this page at https://jeight54188.github.io/a2/
 
 ## 用作扩展
 
-此仓库可以作为 **插件** 添加到 MakeCode 中。
+This repository can be added as an **extension** in MakeCode.。
 
-* 打开 [https://arcade.makecode.com/](https://arcade.makecode.com/)
-* 点击 **新项目**
-* 点击齿轮图标菜单下的 **扩展**
-* 搜索 **https://github.com/jeight54188/a2** 并导入
+* Open [https://arcade.makecode.com/](https://arcade.makecode.com/)
+* Click on **New Project**
+* Click on the gear icon menu and select **Extensions**
+* Search for **https://github.com/jeight54188/a2** and import it.
 
-## 编辑此项目 ![Build status badge](https://github.com/jeight54188/a2/workflows/MakeCode/badge.svg)
+## Edit this project ![Build status badge](https://github.com/jeight54188/a2/workflows/MakeCode/badge.svg)
 
-在 MakeCode 中编辑此仓库。
+To edit this repository in MakeCode:
 
-* 打开 [https://arcade.makecode.com/](https://arcade.makecode.com/)
-* 点击 **导入**，然后点击 **导入 URL**
-* 粘贴 **https://github.com/jeight54188/a2** 并点击导入
+* Open [https://arcade.makecode.com/](https://arcade.makecode.com/)
+* Click **Import**，and click **import URL**
+* Paste **https://github.com/jeight54188/a2** click import
 
 ## Blocks preview
 
@@ -27,7 +27,7 @@ This image may take a few minutes to refresh.
 
 ![A rendered view of the blocks](https://github.com/jeight54188/a2/raw/master/.github/makecode/blocks.png)
 
-#### 元数据（用于搜索、渲染）
+#### Metadata (for search and rendering)
 
 * for PXT/arcade
 <script src="https://makecode.com/gh-pages-embed.js"></script><script>makeCodeRender("{{ site.makecode.home_url }}", "{{ site.github.owner_name }}/{{ site.github.repository_name }}");</script>
