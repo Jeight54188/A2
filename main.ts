@@ -1,171 +1,6 @@
-controller.player2.onButtonEvent(ControllerButton.Down, ControllerButtonEvent.Pressed, function () {
-    mySprite2.setImage(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . f f f f . . . . . . 
-        . . . . f f f 8 8 f f f . . . . 
-        . . . f f f 8 8 8 8 f f f . . . 
-        . . f f f a a a a a a f f f . . 
-        . . f a a 8 8 8 8 8 8 a f f . . 
-        . f f a 8 f f f f f f 8 a f f . 
-        . f f f f f a a a a f f f f f . 
-        . . f a f b 3 b b 3 b f a f . . 
-        . . f a b 1 3 d d 3 1 b a f . . 
-        . . a f f f f d d d b a f . . . 
-        . . f d d d d f 8 8 8 f 9 f . . 
-        . . f b b b b f 8 8 8 f b 9 . . 
-        . . f b b b b f 9 b b f . . . . 
-        . . . f c c f f f f f f . . . . 
-        . . . . f f . . . f f f . . . . 
-        `)
-})
 // Player 1's jump logic.
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     mysp.vy = -120
-})
-controller.B.onEvent(ControllerButtonEvent.Released, function () {
-    mysp.setImage(img`
-        . . . . . . f f f f f f . . . . 
-        . . . . f f e e e e f 2 f . . . 
-        . . . f f e e e e f 2 2 2 f . . 
-        . . . f e e e f f e e e e f . . 
-        . . . f f f f e e 2 2 2 2 e f . 
-        . . . f e 2 2 2 f f f f e 2 f . 
-        . . f f f f f f f e e e f f f . 
-        . . f f e 4 4 e b f 4 4 e e f . 
-        . . f e e 4 d 4 1 f d d e f . . 
-        . . . f e e e 4 d d d d f . . . 
-        . . . . f f e e 4 4 4 e f . . . 
-        . . . . . 4 d d e 2 2 2 f . . . 
-        . . . . . e d d e 2 2 2 f . . . 
-        . . . . . f e e f 4 5 5 f . . . 
-        . . . . . . f f f f f f . . . . 
-        . . . . . . . f f f . . . . . . 
-        `)
-})
-controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
-    mysp.setImage(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . f f f f . . . . . . 
-        . . . . f f f 2 2 f f f . . . . 
-        . . . f f f 2 2 2 2 f f f . . . 
-        . . f f f e e e e e e f f f . . 
-        . . f e e 2 2 2 2 2 2 e f f . . 
-        . f f e 2 f f f f f f 2 e f f . 
-        . f f f f f e e e e f f f f f . 
-        . . f e f b f 4 4 f b f e f . . 
-        . . f e 4 1 f d d f 1 4 e f . . 
-        . . e f f f f d d d 4 e f . . . 
-        . . f d d d d f 2 2 2 f e f . . 
-        . . f b b b b f 2 2 2 f 4 e . . 
-        . . f b b b b f 5 4 4 f . . . . 
-        . . . f c c f f f f f f . . . . 
-        . . . . f f . . . f f f . . . . 
-        `)
-})
-// This shows Player 1 attacking to the left, and fills in the attack's motion and the graphics after it ends.
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    projectile = sprites.createProjectileFromSprite(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . 4 . . . . . 
-        . . . . 2 . . . . 4 4 . . . . . 
-        . . . . 2 4 . . 4 5 4 . . . . . 
-        . . . . . 2 4 d 5 5 4 . . . . . 
-        . . . . . 2 5 5 5 5 4 . . . . . 
-        . . . . . . 2 5 5 5 5 4 . . . . 
-        . . . . . . 2 5 4 2 4 4 . . . . 
-        . . . . . . 4 4 . . 2 4 4 . . . 
-        . . . . . 4 4 . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        `, mysp, -30, 0)
-    mysp.setImage(img`
-        ...............ff.......
-        .............ff2ffff....
-        ............ff2feeeeff..
-        ...........ff22feeeeeff.
-        ...........feeeeffeeeef.
-        ..........fe2222eefffff.
-        ..........f2effff222efff
-        ..........fffeeeffffffff
-        ..........fee44fbe44efef
-        ...........feddfb4d4eef.
-        ..........c.eeddd4eeef..
-        ....ccccccceddee2222f...
-        .....dddddcedd44e444f...
-        ......ccccc.eeeefffff...
-        ..........c...ffffffff..
-        ...............ff..fff..
-        ........................
-        ........................
-        ........................
-        ........................
-        ........................
-        ........................
-        ........................
-        ........................
-        `)
-    pause(5000)
-})
-controller.player2.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Released, function () {
-    mySprite2.setImage(img`
-        . . . . f f f f f f . . . . . . 
-        . . . f 8 f a a a a f f . . . . 
-        . . f 8 8 8 f a a a a f f . . . 
-        . . f a a a a f f a a a f . . . 
-        . f a 8 8 8 8 a a f f f f . . . 
-        . f 8 a f f f f 8 8 8 a f . . . 
-        . f f f a a a f f f f f f f . . 
-        . f a a c c f a a c c a f f . . 
-        . . f a d d 3 1 c d c a a f . . 
-        . . . f d d d d c a a a f . . . 
-        . . . f a c c c a a f f . . . . 
-        . . . f 8 8 8 a d d c . . . . . 
-        . . . f 8 8 8 a d d a . . . . . 
-        . . . f 9 9 c f a a f . . . . . 
-        . . . . f f f f f f . . . . . . 
-        . . . . . . f f f . . . . . . . 
-        `)
-})
-// Player 2's jump logic.
-controller.player2.onButtonEvent(ControllerButton.Up, ControllerButtonEvent.Pressed, function () {
-    mySprite2.vy = -120
-})
-info.onCountdownEnd(function () {
-    if (info.player1.score() > info.player2.score()) {
-        music.play(music.melodyPlayable(music.bigCrash), music.PlaybackMode.UntilDone)
-        game.setGameOverMessage(true, "Player 1 Win！")
-        game.gameOver(true)
-    }
-    if (info.player1.score() < info.player2.score()) {
-        music.play(music.melodyPlayable(music.bigCrash), music.PlaybackMode.UntilDone)
-        game.setGameOverMessage(true, "Player 2 Win！")
-        game.gameOver(true)
-    }
-    if (info.player1.score() == info.player2.score()) {
-        music.play(music.melodyPlayable(music.bigCrash), music.PlaybackMode.UntilDone)
-        game.setGameOverMessage(true, "Draw！")
-        game.gameOver(true)
-    }
-})
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
-    if (sprite == mySprite2) {
-        if (otherSprite == projectile) {
-            info.player2.changeLifeBy(-1)
-            sprites.destroy(projectile)
-            music.play(music.melodyPlayable(music.pewPew), music.PlaybackMode.InBackground)
-        }
-    }
-    if (sprite == mysp) {
-        if (otherSprite == Dark_Pro) {
-            info.player1.changeLifeBy(-1)
-            sprites.destroy(Dark_Pro)
-            music.play(music.melodyPlayable(music.pewPew), music.PlaybackMode.InBackground)
-        }
-    }
 })
 // This shows Player 2 attacking to the right, and fills in the attack's motion and the graphics after it ends.
 controller.player2.onButtonEvent(ControllerButton.B, ControllerButtonEvent.Pressed, function () {
@@ -263,6 +98,54 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
         `)
     pause(5000)
 })
+// This shows Player 1 attacking to the left, and fills in the attack's motion and the graphics after it ends.
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    projectile = sprites.createProjectileFromSprite(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . 4 . . . . . 
+        . . . . 2 . . . . 4 4 . . . . . 
+        . . . . 2 4 . . 4 5 4 . . . . . 
+        . . . . . 2 4 d 5 5 4 . . . . . 
+        . . . . . 2 5 5 5 5 4 . . . . . 
+        . . . . . . 2 5 5 5 5 4 . . . . 
+        . . . . . . 2 5 4 2 4 4 . . . . 
+        . . . . . . 4 4 . . 2 4 4 . . . 
+        . . . . . 4 4 . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, mysp, -30, 0)
+    mysp.setImage(img`
+        ...............ff.......
+        .............ff2ffff....
+        ............ff2feeeeff..
+        ...........ff22feeeeeff.
+        ...........feeeeffeeeef.
+        ..........fe2222eefffff.
+        ..........f2effff222efff
+        ..........fffeeeffffffff
+        ..........fee44fbe44efef
+        ...........feddfb4d4eef.
+        ..........c.eeddd4eeef..
+        ....ccccccceddee2222f...
+        .....dddddcedd44e444f...
+        ......ccccc.eeeefffff...
+        ..........c...ffffffff..
+        ...............ff..fff..
+        ........................
+        ........................
+        ........................
+        ........................
+        ........................
+        ........................
+        ........................
+        ........................
+        `)
+    pause(5000)
+})
 // This shows Player 2 attacking to the left, and fills in the attack's motion and the graphics after it ends.
 controller.player2.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Pressed, function () {
     Dark_Pro = sprites.createProjectileFromSprite(img`
@@ -313,39 +196,84 @@ controller.player2.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Press
     }
     pause(5000)
 })
-controller.player2.onButtonEvent(ControllerButton.B, ControllerButtonEvent.Released, function () {
+controller.player2.onButtonEvent(ControllerButton.Down, ControllerButtonEvent.Pressed, function () {
     mySprite2.setImage(img`
-        . . . . . . f f f f f f . . . . 
-        . . . . f f a a a a f 8 f . . . 
-        . . . f f a a a a f 8 8 8 f . . 
-        . . . f a a a f f a a a a f . . 
-        . . . f f f f a a 8 8 8 8 a f . 
-        . . . f a 8 8 8 f f f f a 8 f . 
-        . . f f f f f f f a a a f f f . 
-        . . f f a c c a a f c c a a f . 
-        . . f a a c d c 1 3 d d a f . . 
-        . . . f a a a c d d d d f . . . 
-        . . . . f f a a c c c a f . . . 
-        . . . . . c d d a 8 8 8 f . . . 
-        . . . . . a d d a 8 8 8 f . . . 
-        . . . . . f a a f c 9 9 f . . . 
-        . . . . . . f f f f f f . . . . 
-        . . . . . . . f f f . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . f f f f . . . . . . 
+        . . . . f f f 8 8 f f f . . . . 
+        . . . f f f 8 8 8 8 f f f . . . 
+        . . f f f a a a a a a f f f . . 
+        . . f a a 8 8 8 8 8 8 a f f . . 
+        . f f a 8 f f f f f f 8 a f f . 
+        . f f f f f a a a a f f f f f . 
+        . . f a f b 3 b b 3 b f a f . . 
+        . . f a b 1 3 d d 3 1 b a f . . 
+        . . a f f f f d d d b a f . . . 
+        . . f d d d d f 8 8 8 f 9 f . . 
+        . . f b b b b f 8 8 8 f b 9 . . 
+        . . f b b b b f 9 b b f . . . . 
+        . . . f c c f f f f f f . . . . 
+        . . . . f f . . . f f f . . . . 
         `)
 })
-info.player1.onLifeZero(function () {
-    mysp.startEffect(effects.disintegrate)
-    sprites.destroy(mysp)
-    music.play(music.melodyPlayable(music.bigCrash), music.PlaybackMode.UntilDone)
-    game.setGameOverMessage(true, "Player 2 Win！")
-    game.gameOver(true)
+controller.player2.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Released, function () {
+    mySprite2.setImage(img`
+        . . . . f f f f f f . . . . . . 
+        . . . f 8 f a a a a f f . . . . 
+        . . f 8 8 8 f a a a a f f . . . 
+        . . f a a a a f f a a a f . . . 
+        . f a 8 8 8 8 a a f f f f . . . 
+        . f 8 a f f f f 8 8 8 a f . . . 
+        . f f f a a a f f f f f f f . . 
+        . f a a c c f a a c c a f f . . 
+        . . f a d d 3 1 c d c a a f . . 
+        . . . f d d d d c a a a f . . . 
+        . . . f a c c c a a f f . . . . 
+        . . . f 8 8 8 a d d c . . . . . 
+        . . . f 8 8 8 a d d a . . . . . 
+        . . . f 9 9 c f a a f . . . . . 
+        . . . . f f f f f f . . . . . . 
+        . . . . . . f f f . . . . . . . 
+        `)
 })
-info.player2.onLifeZero(function () {
-    mySprite2.startEffect(effects.disintegrate)
-    sprites.destroy(mySprite2)
-    music.play(music.melodyPlayable(music.bigCrash), music.PlaybackMode.UntilDone)
-    game.setGameOverMessage(true, "Player 1 Win！")
-    game.gameOver(true)
+// The logic of the player's victory and the music and subtitles that provide feedback determine the outcome
+info.onCountdownEnd(function () {
+    if (info.player1.score() > info.player2.score()) {
+        music.play(music.melodyPlayable(music.bigCrash), music.PlaybackMode.UntilDone)
+        game.setGameOverMessage(true, "Player 1 Win！")
+        game.gameOver(true)
+    }
+    if (info.player1.score() < info.player2.score()) {
+        music.play(music.melodyPlayable(music.bigCrash), music.PlaybackMode.UntilDone)
+        game.setGameOverMessage(true, "Player 2 Win！")
+        game.gameOver(true)
+    }
+    if (info.player1.score() == info.player2.score()) {
+        music.play(music.melodyPlayable(music.bigCrash), music.PlaybackMode.UntilDone)
+        game.setGameOverMessage(true, "Draw！")
+        game.gameOver(true)
+    }
+})
+// Player 2's jump logic.
+controller.player2.onButtonEvent(ControllerButton.Up, ControllerButtonEvent.Pressed, function () {
+    mySprite2.vy = -120
+})
+// Attack logic, determine when projectiles overlap with players and reduce their health, and distinguish each person's projectiles and health to avoid accidentally hurting yourself
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
+    if (sprite == mySprite2) {
+        if (otherSprite == projectile) {
+            info.player2.changeLifeBy(-1)
+            sprites.destroy(projectile)
+            music.play(music.melodyPlayable(music.pewPew), music.PlaybackMode.InBackground)
+        }
+    }
+    if (sprite == mysp) {
+        if (otherSprite == Dark_Pro) {
+            info.player1.changeLifeBy(-1)
+            sprites.destroy(Dark_Pro)
+            music.play(music.melodyPlayable(music.pewPew), music.PlaybackMode.InBackground)
+        }
+    }
 })
 controller.A.onEvent(ControllerButtonEvent.Released, function () {
     mysp.setImage(img`
@@ -367,12 +295,88 @@ controller.A.onEvent(ControllerButtonEvent.Released, function () {
         . . . . . . f f f . . . . . . . 
         `)
 })
+controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
+    mysp.setImage(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . f f f f . . . . . . 
+        . . . . f f f 2 2 f f f . . . . 
+        . . . f f f 2 2 2 2 f f f . . . 
+        . . f f f e e e e e e f f f . . 
+        . . f e e 2 2 2 2 2 2 e f f . . 
+        . f f e 2 f f f f f f 2 e f f . 
+        . f f f f f e e e e f f f f f . 
+        . . f e f b f 4 4 f b f e f . . 
+        . . f e 4 1 f d d f 1 4 e f . . 
+        . . e f f f f d d d 4 e f . . . 
+        . . f d d d d f 2 2 2 f e f . . 
+        . . f b b b b f 2 2 2 f 4 e . . 
+        . . f b b b b f 5 4 4 f . . . . 
+        . . . f c c f f f f f f . . . . 
+        . . . . f f . . . f f f . . . . 
+        `)
+})
+controller.player2.onButtonEvent(ControllerButton.B, ControllerButtonEvent.Released, function () {
+    mySprite2.setImage(img`
+        . . . . . . f f f f f f . . . . 
+        . . . . f f a a a a f 8 f . . . 
+        . . . f f a a a a f 8 8 8 f . . 
+        . . . f a a a f f a a a a f . . 
+        . . . f f f f a a 8 8 8 8 a f . 
+        . . . f a 8 8 8 f f f f a 8 f . 
+        . . f f f f f f f a a a f f f . 
+        . . f f a c c a a f c c a a f . 
+        . . f a a c d c 1 3 d d a f . . 
+        . . . f a a a c d d d d f . . . 
+        . . . . f f a a c c c a f . . . 
+        . . . . . c d d a 8 8 8 f . . . 
+        . . . . . a d d a 8 8 8 f . . . 
+        . . . . . f a a f c 9 9 f . . . 
+        . . . . . . f f f f f f . . . . 
+        . . . . . . . f f f . . . . . . 
+        `)
+})
+controller.B.onEvent(ControllerButtonEvent.Released, function () {
+    mysp.setImage(img`
+        . . . . . . f f f f f f . . . . 
+        . . . . f f e e e e f 2 f . . . 
+        . . . f f e e e e f 2 2 2 f . . 
+        . . . f e e e f f e e e e f . . 
+        . . . f f f f e e 2 2 2 2 e f . 
+        . . . f e 2 2 2 f f f f e 2 f . 
+        . . f f f f f f f e e e f f f . 
+        . . f f e 4 4 e b f 4 4 e e f . 
+        . . f e e 4 d 4 1 f d d e f . . 
+        . . . f e e e 4 d d d d f . . . 
+        . . . . f f e e 4 4 4 e f . . . 
+        . . . . . 4 d d e 2 2 2 f . . . 
+        . . . . . e d d e 2 2 2 f . . . 
+        . . . . . f e e f 4 5 5 f . . . 
+        . . . . . . f f f f f f . . . . 
+        . . . . . . . f f f . . . . . . 
+        `)
+})
+// The second way to win is to defeat your opponent.
+info.player1.onLifeZero(function () {
+    mysp.startEffect(effects.disintegrate)
+    sprites.destroy(mysp)
+    music.play(music.melodyPlayable(music.bigCrash), music.PlaybackMode.UntilDone)
+    game.setGameOverMessage(true, "Player 2 Win！")
+    game.gameOver(true)
+})
+// The second way to win is to defeat your opponent.
+info.player2.onLifeZero(function () {
+    mySprite2.startEffect(effects.disintegrate)
+    sprites.destroy(mySprite2)
+    music.play(music.melodyPlayable(music.bigCrash), music.PlaybackMode.UntilDone)
+    game.setGameOverMessage(true, "Player 1 Win！")
+    game.gameOver(true)
+})
 // Basic game settings, such as creating elves, maps and other basic elements
-let 食物: Sprite = null
+let Yami_Food: Sprite = null
 let 玩家2攻击方向 = 0
 let 玩家1攻击方向 = 0
-let Dark_Pro: Sprite = null
 let projectile: Sprite = null
+let Dark_Pro: Sprite = null
 let mySprite2: Sprite = null
 let mysp: Sprite = null
 scene.setBackgroundImage(img`
@@ -539,14 +543,14 @@ info.player2.setLife(3)
 info.player1.setScore(0)
 controller.moveSprite(mysp, 100, 0)
 controller.player2.moveSprite(mySprite2, 100, 0)
-let 时间 = 120
+let time = 120
 tiles.setCurrentTilemap(tilemap`级别1`)
 tiles.placeOnTile(mysp, tiles.getTileLocation(0, 5))
 tiles.placeOnTile(mySprite2, tiles.getTileLocation(9, 5))
 mysp.ay = 159
 mySprite2.ay = 159
 tiles.setWallAt(tiles.getTileLocation(scene.screenHeight(), scene.screenWidth()), true)
-let 公主 = sprites.create(img`
+let princess = sprites.create(img`
     . . . . . . 5 . 5 . . . . . . . 
     . . . . . f 5 5 5 f f . . . . . 
     . . . . f 1 5 2 5 1 6 f . . . . 
@@ -564,7 +568,7 @@ let 公主 = sprites.create(img`
     . . . f f f f f f f f f f . . . 
     . . . . . f f . . f f . . . . . 
     `, SpriteKind.Food)
-sprites.destroy(公主, effects.hearts, 500)
+sprites.destroy(princess, effects.hearts, 500)
 info.startCountdown(120)
 // Updated sprite movement graphics to ensure smoother gameplay for players.
 game.onUpdate(function () {
@@ -656,40 +660,43 @@ game.onUpdate(function () {
         玩家2攻击方向 = -1
     }
 })
+// Setting high reward food, namely the princess, can increase the player's health and score to make the game more exciting.
 game.onUpdate(function () {
-    if (mysp.overlapsWith(公主)) {
-        sprites.destroy(公主, effects.hearts, 500)
+    if (mysp.overlapsWith(princess)) {
+        sprites.destroy(princess, effects.hearts, 500)
         mysp.startEffect(effects.hearts, 2000)
         music.play(music.melodyPlayable(music.magicWand), music.PlaybackMode.InBackground)
         info.player1.changeLifeBy(1)
         info.player1.changeScoreBy(3)
     }
-    if (mySprite2.overlapsWith(公主)) {
-        sprites.destroy(公主, effects.hearts, 500)
+    if (mySprite2.overlapsWith(princess)) {
+        sprites.destroy(princess, effects.hearts, 500)
         mySprite2.startEffect(effects.hearts, 2000)
         music.play(music.melodyPlayable(music.magicWand), music.PlaybackMode.InBackground)
         info.player2.changeLifeBy(1)
         info.player2.changeScoreBy(3)
     }
 })
+// Set up food to make the game more competitive. Players can score points by obtaining food, and the one with the highest score wins.
 game.onUpdate(function () {
-    if (mysp.overlapsWith(食物)) {
-        sprites.destroy(食物, effects.spray, 500)
+    if (mysp.overlapsWith(Yami_Food)) {
+        sprites.destroy(Yami_Food, effects.spray, 500)
         mysp.startEffect(effects.spray, 2000)
         info.player1.changeScoreBy(1)
         music.play(music.melodyPlayable(music.jumpUp), music.PlaybackMode.InBackground)
     }
-    if (mySprite2.overlapsWith(食物)) {
-        sprites.destroy(食物, effects.spray, 500)
+    if (mySprite2.overlapsWith(Yami_Food)) {
+        sprites.destroy(Yami_Food, effects.spray, 500)
         mySprite2.startEffect(effects.spray, 2000)
         info.player2.changeScoreBy(1)
         music.play(music.melodyPlayable(music.jumpUp), music.PlaybackMode.InBackground)
     }
 })
+// Set the time logic to calculate the princess's spawning time. Due to code conflicts, a separate time variable needs to be set to spawn the princess.
 game.onUpdateInterval(1000, function () {
-    时间 += -1
-    if (时间 == 60) {
-        公主 = sprites.create(img`
+    time += -1
+    if (time == 60) {
+        princess = sprites.create(img`
             . . . . . . 5 . 5 . . . . . . . 
             . . . . . f 5 5 5 f f . . . . . 
             . . . . f 1 5 2 5 1 6 f . . . . 
@@ -707,14 +714,15 @@ game.onUpdateInterval(1000, function () {
             . . . f f f f f f f f f f . . . 
             . . . . . f f . . f f . . . . . 
             `, SpriteKind.Food)
-        tiles.placeOnRandomTile(公主, assets.tile`transparency16`)
-        公主.startEffect(effects.hearts, 500)
+        tiles.placeOnRandomTile(princess, assets.tile`transparency16`)
+        princess.startEffect(effects.hearts, 500)
         music.play(music.melodyPlayable(music.magicWand), music.PlaybackMode.InBackground)
     }
 })
+// The code for the food to disappear and generate automatically prevents the food from becoming too much and losing its fun.
 game.onUpdateInterval(10000, function () {
-    sprites.destroy(食物, effects.spray, 500)
-    食物 = sprites.create(img`
+    sprites.destroy(Yami_Food, effects.spray, 500)
+    Yami_Food = sprites.create(img`
         . . . . . . . . . . . 6 6 6 6 6 
         . . . . . . . . . 6 6 7 7 7 7 8 
         . . . . . . 8 8 8 7 7 8 8 6 8 8 
@@ -732,6 +740,6 @@ game.onUpdateInterval(10000, function () {
         . . . . . . . . c e 2 2 2 2 c . 
         . . . . . . . . . c c c c c . . 
         `, SpriteKind.Food)
-    tiles.placeOnRandomTile(食物, assets.tile`transparency16`)
-    食物.startEffect(effects.spray, 500)
+    tiles.placeOnRandomTile(Yami_Food, assets.tile`transparency16`)
+    Yami_Food.startEffect(effects.spray, 500)
 })
